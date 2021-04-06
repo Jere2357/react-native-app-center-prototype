@@ -34,7 +34,7 @@ const More = ({navigation}: any) => {
   return (
     <Container>
       <DashboardHeader />
-      {Item(<LoansIcon />, 'Apply for Loans', () => console.log('Clicked'))}
+      {Item(<LoansIcon />, 'Apply for Loans', 'nan')}
       {Item(<CardSettingsIcon />, 'Card Settings & History', () =>
         console.log('Clicked'),
       )}

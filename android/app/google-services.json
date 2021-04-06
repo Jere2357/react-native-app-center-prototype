@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054817307445",
+    "project_id": "pai-mobile-crashlytics",
+    "storage_bucket": "pai-mobile-crashlytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054817307445:android:86e9cae65a17f8798a5a7c",
+        "android_client_info": {
+          "package_name": "com.psslaimobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054817307445-s665r31el4e8u9ha20oamsm6ujc7tatv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcLWTAnbK0ESvY6cvUl6YefZrilmHrf7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054817307445-s665r31el4e8u9ha20oamsm6ujc7tatv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
