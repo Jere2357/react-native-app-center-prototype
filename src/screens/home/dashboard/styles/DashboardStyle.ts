@@ -41,7 +41,7 @@ const DashboardStyle = StyleSheet.create({
   },
   applyButton: {
     width: width * 0.5,
-    height: width * 0.1,
+    height: width * 0.13,
     borderWidth: 1,
     borderColor: '#201751',
   },

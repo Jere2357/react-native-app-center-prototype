@@ -1,13 +1,13 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { DARK_BLUE, GRAY, WHITE, BLACK, FONT } from '../../../../theme';
+import {StyleSheet, Dimensions} from 'react-native';
+import {DARK_BLUE, GRAY, WHITE, BLACK, FONT} from '../../../../theme';
 
-const { height, width } = Dimensions.get('screen');
+const {height, width} = Dimensions.get('screen');
 
 const LandingStyle = StyleSheet.create({
   imageBackground: {
     flex: 1,
     paddingHorizontal: 24,
-    paddingTop: 28
+    paddingTop: 28,
   },
   headContainer: {
     marginTop: 28,
@@ -15,12 +15,13 @@ const LandingStyle = StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
+    marginTop: 8,
     width: width * 0.35,
     height: width * 0.1,
   },
   loginButton: {
     width: width * 0.35,
-    height: width * 0.1,
+    height: width * 0.13,
     borderWidth: 1,
     borderColor: DARK_BLUE,
   },
