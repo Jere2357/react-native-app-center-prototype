@@ -20,6 +20,7 @@ const Login = ({navigation}: any) => {
   const [usernameFocus, setUsernameFocus] = useState(false);
   const [passwordFocus, setPasswordFocus] = useState(false);
   const [isPassVisible, setPassVisible] = useState(false);
+  const [isSubmit, setSubmit] = useState(false);
 
   const items = [
     {
@@ -36,7 +37,7 @@ const Login = ({navigation}: any) => {
   };
 
   useEffect(() => {
-    handleLogin();
+    if (auth.isAuthenticated) navigation.navigate(routes.MAIN_DASHBOARD);
   }, [auth.isAuthenticated]);
 
   const handlePasswordIcon = () => {
@@ -44,9 +45,10 @@ const Login = ({navigation}: any) => {
   };
 
   const handleLogin = async () => {
+    setSubmit(true);
     if (username && password) {
+      setSubmit(false);
       dispatch(loginUser(requestLoginBody));
-      navigation.navigate(routes.MAIN_DASHBOARD);
     }
   };
 
@@ -55,14 +57,16 @@ const Login = ({navigation}: any) => {
       <Header title="Log In" onBackPress={() => navigation.goBack()} />
       <Container>
         <FormInput
-          onChangeText={value => setUsername(value)}
+          onChangeText={(value: any) => setUsername(value)}
+          error={isSubmit && !username}
           onFocus={() => setUsernameFocus(true)}
           onBlur={() => setUsernameFocus(false)}
           isFocus={usernameFocus}
           placeholder="Username"
         />
         <FormInput
-          onChangeText={value => setPassword(value)}
+          onChangeText={(value: any) => setPassword(value)}
+          error={isSubmit && !password}
           onFocus={() => setPasswordFocus(true)}
           onBlur={() => setPasswordFocus(false)}
           isFocus={passwordFocus}
