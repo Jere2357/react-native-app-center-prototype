@@ -8,15 +8,42 @@
  * @format
  */
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 import {store} from './src/store';
 import MainStack from './src/navigation/MainStack';
 
 const App = () => {
+  const getUserDetails = () => {
+    try {
+      crashlytics().setUserId('123456abcde');
+
+      // To set multiple valued attributes
+      crashlytics().setAttributes({
+        role: 'admin',
+        followers: '13',
+        email: 'user1998@yopmail.com',
+        username: 'user1998',
+      });
+    } catch (e) {
+      crashlytics().recordError(e);
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    crashlytics().log('App mounted.');
+    getUserDetails();
+
+    return () => {
+      crashlytics().log('App unmounted.');
+    };
+  }, []);
+
   return (
     <Provider store={store}>
       <NavigationContainer>
