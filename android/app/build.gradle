@@ -128,8 +128,8 @@ android {
     lintOptions { 
       checkReleaseBuilds false 
     }
-    
-    ndkVersion rootProject.ext.ndkVersion
+
+    ndkVersion "20.1.5948944"
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
