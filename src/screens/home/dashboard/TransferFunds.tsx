@@ -5,7 +5,7 @@ import styles from './styles/TransferFundsStyle';
 const TransferFunds = () => {
   return (
     <View style={styles.container}>
-      <Text>This is Login Page</Text>
+      <Text>This is Transfer Funds Page</Text>
     </View>
   );
 };
