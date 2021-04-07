@@ -129,8 +129,6 @@ android {
       checkReleaseBuilds false 
     }
 
-    ndkVersion "20.1.5948944"
-
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     compileOptions {
