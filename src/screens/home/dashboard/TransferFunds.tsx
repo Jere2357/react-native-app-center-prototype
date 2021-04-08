@@ -5,7 +5,7 @@ import styles from './styles/TransferFundsStyle';
 const TransferFunds = () => {
   return (
     <View style={styles.container}>
-      <Text>This is Transfer Funds Page</Text>
+      <Text>This is 7 inches Funds Page</Text>
     </View>
   );
 };

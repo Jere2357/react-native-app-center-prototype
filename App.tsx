@@ -47,7 +47,8 @@ const App = () => {
 
   useEffect(() => {
     codePush.sync({
-      installMode: codePush.InstallMode.IMMEDIATE,
+      installMode: codePush.InstallMode.ON_NEXT_RESUME,
+      minimumBackgroundDuration: 60 * 10,
     });
   }, []);
 
@@ -59,11 +60,6 @@ const App = () => {
       </NavigationContainer>
     </Provider>
   );
-};
-
-let codePushOptions = {
-  checkFrequency: codePush.CheckFrequency.ON_APP_START,
-  installMode: codePush.InstallMode.IMMEDIATE,
 };
 
 export default App;
