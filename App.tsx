@@ -13,6 +13,7 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import crashlytics from '@react-native-firebase/crashlytics';
+import codePush from 'react-native-code-push';
 
 import {store} from './src/store';
 import MainStack from './src/navigation/MainStack';
@@ -44,6 +45,12 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    codePush.sync({
+      installMode: codePush.InstallMode.IMMEDIATE,
+    });
+  }, []);
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -52,6 +59,11 @@ const App = () => {
       </NavigationContainer>
     </Provider>
   );
+};
+
+let codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_START,
+  installMode: codePush.InstallMode.IMMEDIATE,
 };
 
 export default App;
