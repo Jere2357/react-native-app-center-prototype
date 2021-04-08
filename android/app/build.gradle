@@ -140,7 +140,7 @@ android {
         applicationId "com.psslaimobile"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
+        versionCode 1.0.1
         versionName "1.0.1"
     }
     splits {
@@ -166,9 +166,6 @@ android {
             signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            applicationVariants.all { variant ->
-             renameAPK(variant, defaultConfig, 'R')
-            }
         }
     }
 
@@ -188,14 +185,6 @@ android {
         }
     }
 }
-def renameAPK(variant, defaultConfig, buildType) {
- variant.outputs.each { output ->
-     def formattedDate = new Date().format('yyMMdd')
-
-     def file = output.packageApplication.outputFile
-     def fileName = applicationName + "_V" + defaultConfig.versionCode + "_" + formattedDate + "_" + buildType + ".apk"
-     output.packageApplication.outputFile = new File(file.parent, fileName)
- }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
